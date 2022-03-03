@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const database = require('./db/database');
+const passport	= require('passport');
+
 
 // MongoDB connection 
 mongoose.Promise = global.Promise;
@@ -23,6 +25,10 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+
+app.use(passport.initialize());
+var passportMiddleware = require('./middleware/passport');
+passport.use(passportMiddleware);
 app.use(cors());
 
 app.use('/api', userRoute)

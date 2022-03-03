@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const userRoute = express.Router();
-let UserModel = require('../model/User');
+let UserModel = require('../model/user');
+const userController  = require('../controller/user-controller');
+
 
 
 userRoute.route('/').get((req, res) => {
@@ -65,5 +67,8 @@ userRoute.route('/delete-user/:id').delete((req, res, next) => {
     }
   })
 })
+
+userRoute.post('/register', userController.registerUser);
+userRoute.post('/login', userController.loginUser);
 
 module.exports = userRoute;

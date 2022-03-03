@@ -28,18 +28,16 @@ export class UpdatePage implements OnInit {
   ngOnInit() {
     this.fetchUser(this.id);
     this.updateUserFg = this.formBuilder.group({
-      name: [''],
-      email: [''],
-      username: ['']
+      username: [''],
+      email: ['']
     })
   }
 
   fetchUser(id) {
     this.userCrudService.getUser(id).subscribe((data) => {
       this.updateUserFg.setValue({
-        name: data['name'],
-        email: data['email'],
-        username: data['username']
+        username: data['username'],
+        email: data['email']
       });
     });
   }

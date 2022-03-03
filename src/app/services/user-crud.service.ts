@@ -6,9 +6,9 @@ import { catchError, tap } from 'rxjs/operators';
 
 export class User {
   _id: number;
-  name: string;
-  email: string;
   username: string;
+  email: string;
+  password: string;
 }
 
 @Injectable({

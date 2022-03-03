@@ -21,9 +21,9 @@ export class CreatePage implements OnInit {
     private userCrudService: UserCrudService    
   ) {
     this.userForm = this.formBuilder.group({
-      name: [''],
+      username: [''],
       email: [''],
-      username: ['']
+      password: ['']
     })
   }
 
