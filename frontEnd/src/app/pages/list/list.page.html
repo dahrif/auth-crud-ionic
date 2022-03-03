@@ -14,9 +14,10 @@
       </ion-label>
 
       <div class="item-note" item-end>
-        <button ion-button clear [routerLink]="['/update/', user._id]">
+        <button [routerLink]="['/update/', user._id]">
           <ion-icon name="create" style="zoom:1.5"></ion-icon>
         </button>
+        
         <button ion-button clear (click)="removeUser(user, i)">
           <ion-icon name="trash" style="zoom:1.5"></ion-icon>
         </button>

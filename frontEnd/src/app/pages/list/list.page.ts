@@ -22,6 +22,16 @@ export class ListPage implements OnInit {
     })
   }
 
+  removeUser(user, i) {
+    if (window.confirm('Are you sure')) {
+      this.userCrudService.deleteUser(user._id)
+      .subscribe(() => {
+          this.Users.splice(i, 1);
+          console.log('User deleted!')
+        }
+      )
+    }
+  }
 
 
 }
