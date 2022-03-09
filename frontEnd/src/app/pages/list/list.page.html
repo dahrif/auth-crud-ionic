@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>list</ion-title>
+    <ion-title>Users List</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
       </ion-label>
 
       <div class="item-note" item-end>
-        <button [routerLink]="['/update/', user._id]">
+        <button ion-button clear [routerLink]="['/update/', user._id]">
           <ion-icon name="create" style="zoom:1.5"></ion-icon>
         </button>
         
@@ -24,7 +24,5 @@
       </div>
     </ion-item>
   </ion-list>
-  
-  <app-tabs></app-tabs>
-</ion-content>
 
+</ion-content>

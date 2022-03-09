@@ -1,16 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>create</ion-title>
+    <ion-title>Create User</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <ion-list lines="full">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-
       <ion-item>
-        <ion-label position="floating">username</ion-label>
+        <ion-label position="floating">Username</ion-label>
         <ion-input formControlName="username" type="text" required></ion-input>
       </ion-item>
 
@@ -21,7 +19,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">password</ion-label>
+        <ion-label position="floating">Password</ion-label>
         <ion-input formControlName="password" type="text" required>
         </ion-input>
       </ion-item>
@@ -31,9 +29,8 @@
           <ion-button type="submit" color="danger" expand="block">Add</ion-button>
         </ion-col>
       </ion-row>
-      
     </form>
   </ion-list>
 
-  <app-tabs></app-tabs>
+
 </ion-content>
