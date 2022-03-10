@@ -17,10 +17,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'inside',
-    loadChildren: () => import('./pages/inside/inside.module').then( m => m.InsidePageModule)
-  },
+
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
@@ -35,7 +32,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'update',
+    path: 'update/:id',
     loadChildren: () => import('./pages/update/update.module').then( m => m.UpdatePageModule)
   },
 

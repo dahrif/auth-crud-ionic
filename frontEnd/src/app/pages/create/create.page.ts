@@ -3,6 +3,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { UserCrudService } from '../../services/user-crud.service';
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-create',
@@ -18,7 +19,8 @@ export class CreatePage implements OnInit {
     private router: Router,
     public formBuilder: FormBuilder,
     private zone: NgZone,
-    private userCrudService: UserCrudService    
+    private userCrudService: UserCrudService,
+    private authService : AuthService
   ) {
     this.userForm = this.formBuilder.group({
       username: [''],
@@ -43,5 +45,10 @@ export class CreatePage implements OnInit {
         });
     }
   }
+
+  logout() {
+    this.authService.logout();
+    window.location.reload() 
+   }
 
 }

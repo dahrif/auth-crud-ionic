@@ -10,7 +10,6 @@ import { CreatePageRoutingModule } from './create-routing.module';
 import { CreatePage } from './create.page';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { TabsComponent } from 'src/app/tabs/tabs.component';
 
 const routes: Routes = [
   {
@@ -30,7 +29,6 @@ const routes: Routes = [
   ],
   declarations: [
     CreatePage,
-    TabsComponent
   ]
 })
 export class CreatePageModule {}

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { UserCrudService } from '../../services/user-crud.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class UpdatePage implements OnInit {
     private userCrudService: UserCrudService,
     private activatedRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService : AuthService
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
@@ -53,5 +55,10 @@ export class UpdatePage implements OnInit {
         })
     }
   }
+
+  logout() {
+    this.authService.logout();
+    window.location.reload() 
+   }
 
 }

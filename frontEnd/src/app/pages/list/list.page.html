@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Users List</ion-title>
+    <ion-title>list</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
       </ion-label>
 
       <div class="item-note" item-end>
-        <button ion-button clear [routerLink]="['/update/', user._id]">
+        <button [routerLink]="['/update/', user._id]">
           <ion-icon name="create" style="zoom:1.5"></ion-icon>
         </button>
         
@@ -25,4 +25,24 @@
     </ion-item>
   </ion-list>
 
+
+  <ion-row class="bottom" >
+    
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/list" tab="list">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Users List</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/create" tab="create">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Add User</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLinkActive="tab-selected" (click)="logout()" tab="logout">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Logout</ion-label>
+    </ion-tab-button>
+
+  </ion-row>
+  
+ 
 </ion-content>
+

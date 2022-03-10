@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserCrudService } from '../../services/user-crud.service';
+
 
 
 @Component({
@@ -11,7 +13,10 @@ export class ListPage implements OnInit {
 
   Users: any = [];
 
-  constructor( private userCrudService: UserCrudService ) { }
+  constructor( 
+    private userCrudService: UserCrudService,
+    private authService : AuthService
+     ) { }
 
   ngOnInit() {
   }
@@ -32,6 +37,11 @@ export class ListPage implements OnInit {
       )
     }
   }
+
+  logout() {
+    this.authService.logout();
+    window.location.reload() 
+   }
 
 
 }
