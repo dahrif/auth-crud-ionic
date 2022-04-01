@@ -29,6 +29,7 @@
     "@ionic-native/status-bar": "^5.36.0",
     "@ionic/angular": "^6.0.0",
     "@ionic/storage": "^2.1.3",
+    "ansi-regex": "^6.0.1",
     "cordova-sqlite-storage": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
